@@ -1,0 +1,115 @@
+# Copyright (C) 2025 Hamxa
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WandTech Console 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-console\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-07T18:57:31+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wandtech-console\n"
+
+#. Plugin Name of the plugin
+#: wandtech-console.php
+#: includes/class-wandtech-console-admin.php:26
+#: includes/class-wandtech-console-admin.php:82
+msgid "WandTech Console"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/wandtech-console/"
+msgstr ""
+
+#. Description of the plugin
+#: wandtech-console.php
+#: includes/class-wandtech-console-admin.php:83
+msgid "A modular console for adding powerful features to WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: wandtech-console.php
+msgid "Hamxa"
+msgstr ""
+
+#. Author URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:68
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:86
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:87
+msgid "Modules"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:88
+msgid "About"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:92
+msgid "Welcome to the Console"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:93
+msgid "This is the central hub for all WandTech features. Use the tabs above to navigate."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:94
+msgid "Activate or deactivate powerful tools for your site from the \"Modules\" tab."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:115
+msgid "Version:"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:116
+msgid "Author:"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:122
+msgid "No modules found in the /modules directory. Add your first module to get started!"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:128
+msgid "About WandTech Console"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:129
+msgid "This console was designed by the WandTech team to be a lightweight, powerful, and developer-friendly framework."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:130
+msgid "We believe in modularity and performance, allowing you to enable only the features you need."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:39
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:47
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:58
+msgid "Invalid module specified."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:74
+msgid "Module status updated successfully."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:78
+msgid "Could not update module status in the database."
+msgstr ""
