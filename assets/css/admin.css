@@ -1,8 +1,7 @@
 /*
  * WandTech Console Admin Styles
- * Version: 2.1
+ * Version: 2.3 - Active Tab Styling
  * A modern, clean, and professional stylesheet for the WandTech Console settings page.
- * This stylesheet uses CSS variables for easy theming and customization.
  */
 
 /* ===== CSS Variables for Easy Theming ===== */
@@ -15,14 +14,15 @@
     --text-color: #2c3338;
     --subtle-text-color: #50575e;
     --success-color: #228b22;
-    --border-radius: 16px; /* A slightly more standard radius */
+    --border-radius: 24px;
+    --border-radius-small: 12px;
     --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     --card-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== General Wrapper & Typography ===== */
 .wandtech-wrap {
-    /*margin: 20px 20px 20px 0;*/ /* Align with WordPress dashboard */
+    /* margin: 20px 20px 20px 0; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
@@ -40,12 +40,11 @@
     margin-bottom: 30px;
 }
 
-/* ===== Modern Tab Navigation ===== */
+/* ===== Tab Navigation ===== */
 .nav-tab-wrapper {
-    /* border-bottom: 1px solid var(--border-color); */
-    margin-bottom: 0;
     display: flex;
     justify-content: center; 
+    margin-bottom: 0;
 }
 
 .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, h1.nav-tab-wrapper {
@@ -54,31 +53,46 @@
 
 .nav-tab {
     background: none;
-    border: 1px solid var(--border-color);
-    /* border: none; */
+    border: 1px solid transparent; /* Start with transparent borders */
     border-bottom: none;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    margin: 0 5px -1px 5px; /* Adjust margin and correct bottom pixel push */
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    margin: 0 5px -1px 5px; 
     padding: 12px 20px;
     font-size: 14px;
     font-weight: 500;
     color: var(--subtle-text-color);
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    position: relative; /* Needed for z-index and positioning */
+}
+
+.nav-tab:focus, .nav-tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--card-background), 0 0 0 4px var(--primary-color);
+    z-index: 2;
 }
 
 .nav-tab:hover {
     color: var(--primary-color);
-    background: var(--card-background);
+    background: #f6f7f7; /* A very light grey for hover */
 }
 
+/* ===== ACTIVE TAB STYLING (MODIFIED) ===== */
 .nav-tab-active,
 .nav-tab-active:hover {
-    /* border-bottom-color: var(--primary-color); */
     color: var(--text-color);
-    background: var(--card-background);
+    background-color: var(--card-background); /* Explicitly set background to white */
     font-weight: 600;
+    border-color: var(--border-color);
+    border-bottom-color: var(--card-background); /* This makes the tab "merge" with the content below */
+    z-index: 1;
 }
+
+.nav-tab-active:focus,
+.nav-tab-active:focus-visible {
+    box-shadow: none;
+}
+
 
 /* ===== Tab Content Styling ===== */
 .tab-content {
@@ -86,12 +100,13 @@
     padding: 30px;
     background: var(--card-background);
     border: 1px solid var(--border-color);
-    border-top: none; 
+    border-top: none; /* Let the nav-tab-wrapper handle the top border appearance */
     border-radius: var(--border-radius);
+    /* Adjust border-radius to account for the connected tab */
+    /* border-top-left-radius: 0; */
+    /* border-top-right-radius: 0; */
     box-shadow: var(--card-shadow);
     margin-bottom: 20px;
-
-    /* Animation properties */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -100,17 +115,15 @@
     display: block;
     opacity: 1;
 }
+/* ... The rest of the CSS remains exactly the same ... */
 
 .tab-content h3 {
     margin-top: 0;
     font-size: 1.4em;
     color: var(--text-color);
-    /* border-bottom: 1px solid #eee; */
-    /* padding-bottom: 15px; */
     margin-bottom: 20px;
 }
 
-/* ===== Module Card Styling ===== */
 .module-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -121,7 +134,7 @@
     position: relative;
     background: var(--card-background);
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-small);
     box-shadow: var(--card-shadow);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     display: flex;
@@ -172,11 +185,10 @@
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius-small);
+    border-bottom-right-radius: var(--border-radius-small);
 }
 
-/* ===== Enhanced Toggle Switch ===== */
 .switch {
     position: relative;
     display: inline-block;
@@ -223,8 +235,6 @@ input:checked + .slider:before {
     transform: translateX(22px);
 }
 
-/* ===== Spinner Overlay ===== */
-/* The spinner-overlay div itself is now just a container */
 .spinner-overlay {
     display: none;
     position: absolute;
@@ -234,16 +244,15 @@ input:checked + .slider:before {
     bottom: 0;
     background: rgba(255, 255, 255, 0.8);
     z-index: 10;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-small);
     align-items: center;
     justify-content: center;
 }
-/* Show the overlay when the card is loading */
+
 .module-card.loading .spinner-overlay {
     display: flex;
 }
 
-/* Spinner animation using CSS for better performance */
 .spinner-overlay::after {
     content: '';
     display: block;

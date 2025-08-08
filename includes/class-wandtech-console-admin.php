@@ -6,7 +6,7 @@
  * @package    Wandtech_Console
  */
 
-if (!defined('WPINC')) die;
+if (!defined('ABSPATH')) exit;
 
 class Wandtech_Console_Admin {
 

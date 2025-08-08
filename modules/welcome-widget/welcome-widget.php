@@ -10,7 +10,7 @@
  */
 
 // Prevent direct access to the file.
-if (!defined('WPINC')) die;
+if (!defined('ABSPATH')) exit;
 
 // Use a constant to ensure this file is loaded only once.
 if (defined('WANDTECH_WELCOME_WIDGET_LOADED')) {

@@ -9,7 +9,7 @@
  * @package    Wandtech_Console
  */
 
-if (!defined('WPINC')) die;
+if (!defined('ABSPATH')) exit;
 
 final class Wandtech_Console {
 

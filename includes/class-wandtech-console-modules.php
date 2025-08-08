@@ -3,7 +3,7 @@
  * Handles module scanning, activation, deactivation, and conditional loading.
  */
 
-if (!defined('WPINC')) die;
+if (!defined('ABSPATH')) exit;
 
 class Wandtech_Console_Modules {
 

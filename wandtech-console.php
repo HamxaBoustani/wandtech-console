@@ -12,10 +12,10 @@
  * Domain Path:       /languages
  */
 
-if (!defined('WPINC')) die;
+if (!defined('ABSPATH')) exit;
 
-// Define plugin constants with the new branding
-define('WANDTECH_CONSOLE_VERSION', '2.0.0');
+// Define plugin constants
+define('WANDTECH_CONSOLE_VERSION', '1.0.0');
 define('WANDTECH_CONSOLE_PATH', plugin_dir_path(__FILE__));
 define('WANDTECH_CONSOLE_URL', plugin_dir_url(__FILE__));
 define('WANDTECH_CONSOLE_MAIN_FILE', __FILE__);
