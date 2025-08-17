@@ -1,0 +1,660 @@
+/*
+ * WandTech Console Admin Styles
+ *
+ * A modern, clean, and professional stylesheet for the WandTech Console settings page.
+ * This file follows a structured, top-down approach for readability and maintainability.
+ *
+ * @version 2.1.0 - Cleaned up and fully expanded.
+ */
+
+/* ==========================================================================
+   1. Global Wrapper & Variables
+   ========================================================================== */
+
+.wandtech-wrap {
+    /* --- CSS Variables for Easy Theming --- */
+    --primary-color: #0073aa;
+    --primary-color-hover: #005a87;
+    --card-background: #ffffff;
+    --border-color: #dcdcde;
+    --text-color: #2c3338;
+    --subtle-text-color: #50575e;
+    --success-color: #228b22;
+    --danger-color: #b32d2e;
+    --danger-color-hover: #711a1b;
+    --border-radius: 16px;
+    --border-radius-small: 10px;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    /* --- Base Font --- */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* ==========================================================================
+   2. Page Header & Typography
+   ========================================================================== */
+
+/* .wandtech-header-logo {
+    text-align: center;
+    margin-bottom: -30px;
+}
+
+.wandtech-header-logo img {
+    max-width: 128px;
+    height: auto;
+    opacity: 0.9;
+} */
+
+.wandtech-header-logo {
+    text-align: center;
+    margin-bottom: -35px;
+}
+
+.wandtech-header-logo svg {
+    width: 128px;
+    height: auto;
+    overflow: visible; /* Prevent parts from being clipped during animation */
+}
+
+/* 1. Define the keyframes for the heartbeat animation */
+@keyframes heartbeat-animation {
+    /* Start at normal size */
+    0% {
+        transform: scale(1);
+    }
+    /* A small, quick beat */
+    30% {
+        transform: scale(1.15);
+    }
+    /* Return to normal quickly */
+    40% {
+        transform: scale(1);
+    }
+    /* The second, larger beat */
+    50% {
+        transform: scale(1.2);
+    }
+    /* Return to normal and begin the pause */
+    60% {
+        transform: scale(1);
+    }
+    /* Stay at normal size until the end of the cycle */
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 2. Set the base colors for ALL paths */
+.wandtech-header-logo path:not(.logo-heartbeat) {
+    fill: #fda957; /* The orange color for the static parts */
+}
+
+/* 3. Style the specific path and apply the animation */
+.wandtech-header-logo .logo-heartbeat {
+    /* Set the specific fill color for the animated part */
+    fill: #354977;
+
+    /* Apply the animation */
+    animation-name: heartbeat-animation;
+    animation-duration: 1.4s; /* A natural heartbeat pace */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    /* Set the transformation origin to the element's geometric center */
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+/* ... (The rest of the header styles: h1, subtitle) ... */
+.wandtech-wrap h1,
+.wandtech-subtitle {
+    text-align: center;
+}
+
+.wandtech-wrap h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.wandtech-subtitle {
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   3. Tab Navigation System
+   ========================================================================== */
+
+.nav-tab-wrapper,
+.wrap h2.nav-tab-wrapper {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 0;
+    border-bottom: none !important; 
+    position: relative;
+}
+
+.nav-tab {
+    background: #f6f7f7;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    margin: 0 5px; 
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--subtle-text-color);
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    top: 1px;
+}
+
+.nav-tab:focus, 
+.nav-tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--card-background), 0 0 0 4px var(--primary-color);
+    z-index: 2;
+}
+
+.nav-tab:hover {
+    color: var(--primary-color);
+    background: #fff;
+}
+
+.nav-tab-active,
+.nav-tab-active:hover {
+    color: var(--text-color);
+    background-color: var(--card-background);
+    font-weight: 600;
+    border-bottom-color: var(--card-background);
+    z-index: 1;
+}
+
+.nav-tab-active:focus,
+.nav-tab-active:focus-visible {
+    box-shadow: none;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius); 
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    z-index: 0;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.tab-content h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ==========================================================================
+   4. Module Manager Tab (#modules)
+   ========================================================================== */
+
+/* --- Header: Filters & Search --- */
+.modules-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.module-filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.filter-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.filter-link:hover {
+    color: var(--primary-color-hover);
+}
+
+.filter-link.current,
+.filter-link.current:hover {
+    color: var(--text-color);
+    font-weight: 600;
+    border-bottom-color: var(--primary-color);
+}
+
+.module-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#module-search-input {
+    width: 250px;
+}
+
+/* --- Card Grid & Items --- */
+.module-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+}
+
+.module-card {
+    position: relative;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.module-card.is-active {
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.module-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.module-card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.module-card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.module-card-body p {
+    margin: 0;
+    color: var(--subtle-text-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.module-card-footer { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px; 
+    background: #fafafa; 
+    border-top: 1px solid #f0f0f1; 
+    color: #787c82; 
+    font-size: 12px; 
+    border-bottom-left-radius: var(--border-radius-small); 
+    border-bottom-right-radius: var(--border-radius-small); 
+}
+
+.module-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.module-action-links .delete-module-link {
+    color: var(--danger-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.module-action-links .delete-module-link:hover {
+    color: var(--danger-color-hover);
+    text-decoration: underline;
+}
+
+/* --- Toggle Switch --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 28px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* --- Spinner Overlay --- */
+.spinner-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    border-radius: var(--border-radius-small);
+    align-items: center;
+    justify-content: center;
+}
+
+.module-card.loading .spinner-overlay {
+    display: flex;
+}
+
+.spinner-overlay::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   5. Dashboard Tab (#dashboard)
+   ========================================================================== */
+
+.wandtech-dashboard-welcome {
+    padding: 20px;
+    background-color: #f6f7f7;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wandtech-dashboard-welcome h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.wandtech-dashboard-welcome p {
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wandtech-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--card-background);
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--card-shadow);
+}
+
+.stat-card .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: var(--subtle-text-color);
+}
+
+.stat-card.active .dashicons {
+    color: var(--primary-color);
+}
+
+.stat-card.inactive .dashicons {
+    color: var(--danger-color);
+}
+
+.stat-card.performance .dashicons {
+    color: var(--primary-color);
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 1em;
+    color: var(--subtle-text-color);
+}
+
+.wandtech-performance-explainer {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-inline-start: 4px solid var(--primary-color);
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wandtech-performance-explainer .dashicons {
+    color: var(--primary-color);
+}
+
+.wandtech-performance-explainer p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   6. Module Installer Modal
+   ========================================================================== */
+
+.wandtech-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.wandtech-modal-content {
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: var(--border-radius-small);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.wandtech-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.wandtech-modal-close:hover {
+    color: #333;
+}
+
+.wandtech-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.wandtech-modal-body {
+    margin: 25px 0;
+}
+
+.wandtech-modal-body input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed var(--border-color);
+    border-radius: 4px;
+    text-align: center;
+    color: var(--subtle-text-color);
+}
+
+.wandtech-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.wandtech-modal-footer .spinner {
+    margin: 0 10px 0 0;
+    visibility: hidden;
+}
+
+.wandtech-modal-footer .spinner.is-active {
+    visibility: visible;
+}
+
+.wandtech-modal-notice {
+    margin-top: 15px;
+}
+
+.wandtech-modal-notice .notice {
+    margin: 0;
+    padding: 12px;
+}
+
+/* ==========================================================================
+   7. Console Footer
+   ========================================================================== */
+
+.wandtech-console-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--subtle-text-color);
+}
+
+.footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-credit .dashicons-heart {
+    color: #e25555;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+}

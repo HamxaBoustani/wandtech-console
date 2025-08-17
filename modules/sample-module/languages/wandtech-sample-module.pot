@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-16T21:23:29+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wandtech-sample-module\n"
+
+#: sample-module.php:68
+msgid "WandTech Console Overview"
+msgstr ""
+
+#: sample-module.php:101
+msgid "Total Modules"
+msgstr ""
+
+#: sample-module.php:108
+msgid "Active"
+msgstr ""
+
+#: sample-module.php:115
+msgid "Inactive"
+msgstr ""
+
+#: sample-module.php:122
+msgid "Optimized"
+msgstr ""
+
+#: sample-module.php:129
+msgid "The Mission: Power Meets Performance"
+msgstr ""
+
+#: sample-module.php:130
+msgid "WandTech Console is designed to be the last optimization and feature plugin you'll ever need, providing maximum functionality with minimal performance impact."
+msgstr ""
+
+#: sample-module.php:136
+msgid "Reduce Bloat:"
+msgstr ""
+
+#: sample-module.php:137
+msgid "Replace dozens of single-feature plugins with one lightweight, modular core."
+msgstr ""
+
+#: sample-module.php:143
+msgid "Boost Speed:"
+msgstr ""
+
+#: sample-module.php:144
+msgid "Only the code you use is loaded. Admin modules have zero impact on your site's frontend speed."
+msgstr ""
+
+#: sample-module.php:150
+msgid "Total Control:"
+msgstr ""
+
+#: sample-module.php:151
+msgid "Activate and deactivate features with a single click from a centralized, beautiful console."
+msgstr ""
+
+#: sample-module.php:160
+msgid "Go to Full Console"
+msgstr ""
+
+#: sample-module.php:163
+msgid "Star on GitHub"
+msgstr ""
