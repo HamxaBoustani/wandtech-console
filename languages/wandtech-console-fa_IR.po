@@ -1,0 +1,390 @@
+# Copyright (C) 2025 Hamxa
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WandTech Console 2.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-console\n"
+"POT-Creation-Date: 2025-08-17T18:27:10+00:00\n"
+"PO-Revision-Date: 2025-08-17 22:58+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Domain: wandtech-console\n"
+
+#. Plugin Name of the plugin
+#: wandtech-console.php includes/class-wandtech-console-admin.php:49
+#: includes/class-wandtech-console-admin.php:138
+msgid "WandTech Console"
+msgstr "کنسول وندتک"
+
+#. Plugin URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/wandtech-console/"
+msgstr ""
+
+#. Description of the plugin
+#: wandtech-console.php
+msgid ""
+"A high-performance, developer-centric framework for adding modular "
+"functionality to WordPress."
+msgstr ""
+"فریم‌ورکی سریع و بهینه، طراحی‌شده برای توسعه‌دهندگان جهت افزودن امکانات ماژولار "
+"به وردپرس."
+
+#. Author of the plugin
+#: wandtech-console.php
+msgid "Hamxa"
+msgstr ""
+
+#. Author URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:34
+msgid "About"
+msgstr "درباره"
+
+#: core-modules/about-tab/about-tab.php:74
+msgid "More Power, More Performance."
+msgstr "پر قدرت و شگفت انگیز با پرفورمنس بهینه"
+
+#: core-modules/about-tab/about-tab.php:75
+msgid "Thank you for choosing WandTech Console!"
+msgstr "مرسی که کنسول وند تک رو انتخاب کردی!"
+
+#: core-modules/about-tab/about-tab.php:81
+msgid "About the Author"
+msgstr "درباره توسعه‌دهنده"
+
+#: core-modules/about-tab/about-tab.php:85
+#, php-format
+msgid ""
+"This plugin was crafted with ❤️ by <strong>%s</strong>, a passionate "
+"developer dedicated to creating high-quality, performant, and user-friendly "
+"solutions for WordPress."
+msgstr ""
+"این افزونه با ❤️ توسط <strong>%s</strong> ساخته شده است، توسعه‌دهنده‌ای پرشور "
+"که متعهد به ایجاد راه‌حل‌های باکیفیت، بهینه و کاربرپسند برای وردپرس است."
+
+#: core-modules/about-tab/about-tab.php:99
+msgid "Get Involved & Stay Connected"
+msgstr "همراه شوید و همیشه با ما در تماس باشید"
+
+#: core-modules/about-tab/about-tab.php:100
+msgid ""
+"Your support helps this open-source project grow. Please consider starring "
+"the repository on GitHub, reporting any issues you find, or connecting on "
+"social media."
+msgstr ""
+"حمایت شما به رشد این پروژه متن‌باز کمک می‌کند. لطفاً با ستاره دادن به مخزن در "
+"GitHub، گزارش باگ‌ها یا ارتباط از طریق شبکه‌های اجتماعی ما را همراهی کنید."
+
+#: core-modules/about-tab/about-tab.php:104
+msgid "Visit WandTech.com"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:108
+msgid "Star on GitHub"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:112
+msgid "Report an Issue"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:116
+msgid "Follow on X"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:120
+msgid "Connect on LinkedIn"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:35
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#: core-modules/dashboard/dashboard.php:66
+msgid "Welcome to your Control Center"
+msgstr "مرکز کنترل شما آماده است"
+
+#: core-modules/dashboard/dashboard.php:67
+msgid ""
+"This is the central hub for all WandTech features. From here, you can manage "
+"powerful tools that enhance your WordPress site. Use the tabs above to "
+"navigate and configure your modules."
+msgstr ""
+"این مرکز اصلی تمام قابلیت‌های WandTech است. از اینجا می‌توانید ابزارهای "
+"قدرتمندی را مدیریت کنید که سایت وردپرس شما را بهبود می‌بخشند. از تب‌های بالا "
+"برای جابجایی و پیکربندی ماژول‌ها استفاده کنید."
+
+#: core-modules/dashboard/dashboard.php:70
+msgid "System Status At a Glance"
+msgstr "وضعیت وند تک در یک نگاه"
+
+#: core-modules/dashboard/dashboard.php:76
+msgid "Total Modules Available"
+msgstr "مجموع ماژول‌ها"
+
+#: core-modules/dashboard/dashboard.php:83
+msgid "Active Modules"
+msgstr "ماژول‌های فعال"
+
+#: core-modules/dashboard/dashboard.php:90
+msgid "Inactive Modules"
+msgstr "ماژول‌های غیرفعال"
+
+#: core-modules/dashboard/dashboard.php:97
+msgid "Performance Optimizations"
+msgstr "بهینه‌سازی پرفورمنس"
+
+#. translators: %d is the number of admin-only modules.
+#: core-modules/dashboard/dashboard.php:109
+#, php-format
+msgid ""
+"To keep your site fast for visitors, we prevented %d admin-specific module "
+"from loading on the frontend."
+msgid_plural ""
+"To keep your site fast for visitors, we prevented %d admin-specific modules "
+"from loading on the frontend."
+msgstr[0] ""
+"برای حفظ سرعت سایت برای بازدیدکنندگان، از بارگذاری %d ماژول مخصوص مدیر در "
+"فرانت‌اند جلوگیری کردیم."
+msgstr[1] ""
+"برای حفظ سرعت سایت برای بازدیدکنندگان، از بارگذاری %d ماژول مخصوص مدیر در "
+"فرانت‌اند جلوگیری کردیم."
+
+#: core-modules/module-installer/module-installer.php:54
+msgid "Install Module"
+msgstr "نصب ماژول"
+
+#: core-modules/module-installer/module-installer.php:72
+msgid "Close"
+msgstr "بستن"
+
+#: core-modules/module-installer/module-installer.php:73
+msgid "Install a New Module"
+msgstr "نصب یک ماژول جدید"
+
+#: core-modules/module-installer/module-installer.php:74
+msgid "Upload a module in a .zip format to install it."
+msgstr "یک ماژول با فرمت .zip آپلود کنید تا نصب شود."
+
+#: core-modules/module-installer/module-installer.php:80
+msgid "The module must be a correctly formatted .zip file."
+msgstr "ماژول باید یک فایل .zip با فرمت صحیح باشد."
+
+#: core-modules/module-installer/module-installer.php:86
+#: includes/class-wandtech-console-admin.php:107
+msgid "Install Now"
+msgstr "نصب کن"
+
+#: core-modules/module-installer/module-installer.php:103
+#: includes/class-wandtech-console-ajax.php:35
+#: includes/class-wandtech-console-ajax.php:63
+#: includes/class-wandtech-console-ajax.php:101
+msgid "Security check failed or insufficient permissions."
+msgstr "دسترسی کافی نیست."
+
+#: core-modules/module-installer/module-installer.php:108
+msgid "No file was uploaded or an error occurred during upload."
+msgstr "فایل آپلود نشد یا خطایی در آپلود رخ داد."
+
+#: core-modules/module-installer/module-installer.php:111
+#: includes/class-wandtech-console-ajax.php:41
+msgid "Invalid file type. Only .zip files are allowed."
+msgstr "نوع فایل نامعتبر است. تنها فایل‌های .zip مجاز هستند."
+
+#: core-modules/module-installer/module-installer.php:125
+#, php-format
+msgid "Failed to unzip file: %s"
+msgstr "عدم توانایی در اکسترکت فایل: %s"
+
+#: core-modules/module-installer/module-installer.php:140
+msgid ""
+"Could not move the module to the correct directory. This may be a file "
+"permission issue."
+msgstr ""
+"امکان انتقال ماژول به پوشه مورد نظر وجود ندارد. احتمالاً مشکل مربوط به دسترسی "
+"فایل‌ها است."
+
+#: core-modules/module-installer/module-installer.php:142
+#: includes/class-wandtech-console-ajax.php:54
+msgid "Module installed successfully! The page will now reload."
+msgstr "ماژول با موفقیت نصب شد! صفحه اکنون بارگذاری مجدد می‌شود."
+
+#: core-modules/module-installer/module-installer.php:157
+msgid "The ZIP file does not contain a valid module directory structure."
+msgstr "فایل ZIP شامل ساختار پوشه ماژول معتبر نیست."
+
+#: core-modules/module-installer/module-installer.php:162
+#, php-format
+msgid "Invalid module structure. The required file \"%s\" is missing."
+msgstr "ساختار ماژول نامعتبر است. فایل مورد نیاز «%s» وجود ندارد."
+
+#: core-modules/module-installer/module-installer.php:167
+msgid ""
+"This does not appear to be a valid WandTech module. The \"Module Name\" "
+"header is missing."
+msgstr ""
+"این به نظر نمی‌رسد یک ماژول معتبر WandTech باشد. هدر \"Module Name\" وجود "
+"ندارد."
+
+#: core-modules/module-installer/module-installer.php:170
+msgid ""
+"This does not appear to be a valid WandTech module. The \"Scope\" header is "
+"missing."
+msgstr ""
+"این به نظر نمی‌رسد یک ماژول معتبر WandTech باشد. هدر \"Scope\" وجود ندارد."
+
+#: core-modules/module-installer/module-installer.php:175
+#, php-format
+msgid ""
+"A module with the slug \"%s\" already exists. Please delete it first if you "
+"want to reinstall."
+msgstr ""
+"ماژولی با شناسه \"%s\" قبلاً وجود دارد. اگر می‌خواهید دوباره نصب کنید، ابتدا "
+"آن را حذف کنید."
+
+#: core-modules/module-manager/module-manager.php:31
+msgid "Modules"
+msgstr "ماژول ها"
+
+#: core-modules/module-manager/module-manager.php:57
+msgid "All"
+msgstr "همه"
+
+#: core-modules/module-manager/module-manager.php:60
+msgid "Active"
+msgstr "فعال"
+
+#: core-modules/module-manager/module-manager.php:63
+msgid "Inactive"
+msgstr "غیر فعال"
+
+#: core-modules/module-manager/module-manager.php:69
+msgid "Search modules..."
+msgstr "جستجوی ماژول ها..."
+
+#: core-modules/module-manager/module-manager.php:98
+msgid "Version:"
+msgstr "نسخه‌:"
+
+#: core-modules/module-manager/module-manager.php:99
+msgid "Author:"
+msgstr "سازنده:"
+
+#: core-modules/module-manager/module-manager.php:103
+msgid "Delete"
+msgstr "حذف"
+
+#: core-modules/module-manager/module-manager.php:112
+msgid "No modules found matching your search criteria."
+msgstr "ماژولی مطابق جستجوی شما پیدا نشد."
+
+#: core-modules/module-manager/module-manager.php:116
+msgid ""
+"No optional modules found. Click the \"Install Module\" button to upload "
+"one, or add it manually to the `/modules` directory."
+msgstr ""
+"هیچ ماژولی یافت نشد. برای آپلود یک ماژول، روی دکمه \"نصب ماژول\" کلیک کنید "
+"یا آن را به صورت دستی در پوشه /modules اضافه کنید."
+
+#: includes/class-wandtech-console-admin.php:50
+msgid "WandTech"
+msgstr "وند تک"
+
+#: includes/class-wandtech-console-admin.php:105
+msgid "An unexpected error occurred."
+msgstr "یک خطای غیرمنتظره رخ داد."
+
+#: includes/class-wandtech-console-admin.php:106
+msgid "Installing..."
+msgstr "در حال نصب ..."
+
+#: includes/class-wandtech-console-admin.php:139
+msgid "A high-performance console for managing your site's modular features."
+msgstr "یک کنسول پرقدرت برای مدیریت ویژگی‌های ماژولار سایت شما."
+
+#: includes/class-wandtech-console-admin.php:147
+msgid "No Console Modules Found"
+msgstr "هیچ ماژول کنسولی یافت نشد"
+
+#: includes/class-wandtech-console-admin.php:147
+msgid ""
+"The WandTech Console is active, but no core modules were found to display "
+"the UI. Please ensure the `core-modules` directory is present and not empty."
+msgstr ""
+"کنسول WandTech فعال است، اما هیچ ماژول اصلی برای نمایش رابط کاربری یافت نشد. "
+"لطفاً اطمینان حاصل کنید که پوشه core-modules موجود و خالی نیست."
+
+#: includes/class-wandtech-console-admin.php:156
+#, php-format
+msgid "Made with %s by %s"
+msgstr "ساخته شده با %s توسط %s"
+
+#: includes/class-wandtech-console-admin.php:170
+#, php-format
+msgid "Version %s"
+msgstr "نسخه %s"
+
+#: includes/class-wandtech-console-ajax.php:38
+msgid "No file was uploaded or an error occurred."
+msgstr "فایل آپلود نشد یا با خطا مواجه شد."
+
+#: includes/class-wandtech-console-ajax.php:52
+#, php-format
+msgid "Failed to install module: %s"
+msgstr "نصب ماژول با خطا مواجه شد: %s"
+
+#: includes/class-wandtech-console-ajax.php:69
+#: includes/class-wandtech-console-ajax.php:107
+msgid "The specified module is invalid."
+msgstr "ماژول مشخص‌شده نامعتبر است."
+
+#: includes/class-wandtech-console-ajax.php:78
+#, php-format
+msgid "Cannot activate \"%1$s\". It requires: %2$s"
+msgstr "فعال‌سازی \"%1$s\" ممکن نیست، وابستگی مورد نیاز: %2$s"
+
+#: includes/class-wandtech-console-ajax.php:90
+msgid "Module status updated successfully."
+msgstr "وضعیت ماژول با موفقیت به‌روزرسانی شد."
+
+#: includes/class-wandtech-console-ajax.php:92
+msgid "Could not update the module status."
+msgstr "امکان به‌روزرسانی وضعیت ماژول وجود ندارد."
+
+#: includes/class-wandtech-console-ajax.php:111
+msgid "Please deactivate the module before deleting it."
+msgstr "لطفاً قبل از حذف ماژول، آن را غیرفعال کنید."
+
+#: includes/class-wandtech-console-ajax.php:122
+msgid "Invalid module path detected."
+msgstr "مسیر ماژول معتبر نیست."
+
+#: includes/class-wandtech-console-ajax.php:128
+msgid "Module deleted successfully."
+msgstr "ماژول با موفقیت حذف شد."
+
+#: includes/class-wandtech-console-ajax.php:130
+msgid ""
+"Could not delete the module folder. This is usually a file permission issue."
+msgstr ""
+"امکان حذف پوشه ماژول وجود ندارد. این معمولاً به دلیل مشکل در سطح دسترسی "
+"فایل‌ها است."
+
+#: includes/class-wandtech-console-modules.php:186
+#, php-format
+msgid "WandTech Console - Module Disabled: %s"
+msgstr "کنسول WandTech – ماژول غیرفعال شد: %s"
+
+#: includes/class-wandtech-console-modules.php:186
+#, php-format
+msgid "This module requires the following plugin to be active: %s"
+msgstr "این ماژول نیاز دارد که افزونه زیر فعال باشد: %s"

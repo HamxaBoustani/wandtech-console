@@ -1,0 +1,335 @@
+# Copyright (C) 2025 Hamxa
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WandTech Console 2.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-console\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-17T18:27:10+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wandtech-console\n"
+
+#. Plugin Name of the plugin
+#: wandtech-console.php
+#: includes/class-wandtech-console-admin.php:49
+#: includes/class-wandtech-console-admin.php:138
+msgid "WandTech Console"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/wandtech-console/"
+msgstr ""
+
+#. Description of the plugin
+#: wandtech-console.php
+msgid "A high-performance, developer-centric framework for adding modular functionality to WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: wandtech-console.php
+msgid "Hamxa"
+msgstr ""
+
+#. Author URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:34
+msgid "About"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:74
+msgid "More Power, More Performance."
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:75
+msgid "Thank you for choosing WandTech Console!"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:81
+msgid "About the Author"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:85
+#, php-format
+msgid "This plugin was crafted with ❤️ by <strong>%s</strong>, a passionate developer dedicated to creating high-quality, performant, and user-friendly solutions for WordPress."
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:99
+msgid "Get Involved & Stay Connected"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:100
+msgid "Your support helps this open-source project grow. Please consider starring the repository on GitHub, reporting any issues you find, or connecting on social media."
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:104
+msgid "Visit WandTech.com"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:108
+msgid "Star on GitHub"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:112
+msgid "Report an Issue"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:116
+msgid "Follow on X"
+msgstr ""
+
+#: core-modules/about-tab/about-tab.php:120
+msgid "Connect on LinkedIn"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:35
+msgid "Dashboard"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:66
+msgid "Welcome to your Control Center"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:67
+msgid "This is the central hub for all WandTech features. From here, you can manage powerful tools that enhance your WordPress site. Use the tabs above to navigate and configure your modules."
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:70
+msgid "System Status At a Glance"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:76
+msgid "Total Modules Available"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:83
+msgid "Active Modules"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:90
+msgid "Inactive Modules"
+msgstr ""
+
+#: core-modules/dashboard/dashboard.php:97
+msgid "Performance Optimizations"
+msgstr ""
+
+#. translators: %d is the number of admin-only modules.
+#: core-modules/dashboard/dashboard.php:109
+#, php-format
+msgid "To keep your site fast for visitors, we prevented %d admin-specific module from loading on the frontend."
+msgid_plural "To keep your site fast for visitors, we prevented %d admin-specific modules from loading on the frontend."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core-modules/module-installer/module-installer.php:54
+msgid "Install Module"
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:72
+msgid "Close"
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:73
+msgid "Install a New Module"
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:74
+msgid "Upload a module in a .zip format to install it."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:80
+msgid "The module must be a correctly formatted .zip file."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:86
+#: includes/class-wandtech-console-admin.php:107
+msgid "Install Now"
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:103
+#: includes/class-wandtech-console-ajax.php:35
+#: includes/class-wandtech-console-ajax.php:63
+#: includes/class-wandtech-console-ajax.php:101
+msgid "Security check failed or insufficient permissions."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:108
+msgid "No file was uploaded or an error occurred during upload."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:111
+#: includes/class-wandtech-console-ajax.php:41
+msgid "Invalid file type. Only .zip files are allowed."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:125
+#, php-format
+msgid "Failed to unzip file: %s"
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:140
+msgid "Could not move the module to the correct directory. This may be a file permission issue."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:142
+#: includes/class-wandtech-console-ajax.php:54
+msgid "Module installed successfully! The page will now reload."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:157
+msgid "The ZIP file does not contain a valid module directory structure."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:162
+#, php-format
+msgid "Invalid module structure. The required file \"%s\" is missing."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:167
+msgid "This does not appear to be a valid WandTech module. The \"Module Name\" header is missing."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:170
+msgid "This does not appear to be a valid WandTech module. The \"Scope\" header is missing."
+msgstr ""
+
+#: core-modules/module-installer/module-installer.php:175
+#, php-format
+msgid "A module with the slug \"%s\" already exists. Please delete it first if you want to reinstall."
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:31
+msgid "Modules"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:57
+msgid "All"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:60
+msgid "Active"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:63
+msgid "Inactive"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:69
+msgid "Search modules..."
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:98
+msgid "Version:"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:99
+msgid "Author:"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:103
+msgid "Delete"
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:112
+msgid "No modules found matching your search criteria."
+msgstr ""
+
+#: core-modules/module-manager/module-manager.php:116
+msgid "No optional modules found. Click the \"Install Module\" button to upload one, or add it manually to the `/modules` directory."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:50
+msgid "WandTech"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:105
+msgid "An unexpected error occurred."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:106
+msgid "Installing..."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:139
+msgid "A high-performance console for managing your site's modular features."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:147
+msgid "No Console Modules Found"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:147
+msgid "The WandTech Console is active, but no core modules were found to display the UI. Please ensure the `core-modules` directory is present and not empty."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:156
+#, php-format
+msgid "Made with %s by %s"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:170
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:38
+msgid "No file was uploaded or an error occurred."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:52
+#, php-format
+msgid "Failed to install module: %s"
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:69
+#: includes/class-wandtech-console-ajax.php:107
+msgid "The specified module is invalid."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:78
+#, php-format
+msgid "Cannot activate \"%1$s\". It requires: %2$s"
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:90
+msgid "Module status updated successfully."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:92
+msgid "Could not update the module status."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:111
+msgid "Please deactivate the module before deleting it."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:122
+msgid "Invalid module path detected."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:128
+msgid "Module deleted successfully."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:130
+msgid "Could not delete the module folder. This is usually a file permission issue."
+msgstr ""
+
+#: includes/class-wandtech-console-modules.php:186
+#, php-format
+msgid "WandTech Console - Module Disabled: %s"
+msgstr ""
+
+#: includes/class-wandtech-console-modules.php:186
+#, php-format
+msgid "This module requires the following plugin to be active: %s"
+msgstr ""
