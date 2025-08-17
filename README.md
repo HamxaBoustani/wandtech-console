@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/assets/images/wandtech-logo.png" alt="WandTech Console Logo" width="128">
+  <img src="https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/assets/images/wandtech-logo.svg" alt="WandTech Console Logo" width="128">
   <h1>WandTech Console</h1>
   <p><strong>A high-performance, developer-centric framework for adding modular functionality to WordPress.</strong></p>
 

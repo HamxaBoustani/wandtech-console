@@ -2,8 +2,8 @@
 /**
  * Module Name:     Sample Module
  * Description:     A perfect boilerplate and example of how to build a high-quality, translatable module for WandTech Console.
- * Version:         1.3.0 - Redesigned to be an informative mini-dashboard.
- * Author:          WandTech Team
+ * Version:         1.3.0
+ * Author:          Hamxa
  * Scope:           admin
  * Text Domain:     wandtech-sample-module
  * Domain Path:     /languages/
