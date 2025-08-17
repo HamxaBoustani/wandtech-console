@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-16T21:23:29+00:00\n"
-"PO-Revision-Date: 2025-08-17 23:47+0330\n"
+"PO-Revision-Date: 2025-08-18 00:07+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -27,7 +27,7 @@ msgstr "فعال"
 
 #: sample-module.php:115
 msgid "Inactive"
-msgstr "فعال"
+msgstr "غیر فعال"
 
 #: sample-module.php:122
 msgid "Optimized"
@@ -59,8 +59,8 @@ msgstr "بهبود سرعت:"
 
 #: sample-module.php:144
 msgid ""
-"Only the code you use is loaded. Admin modules have zero impact on your "
-"site's frontend speed."
+"Only the code you use is loaded. Admin modules have zero impact on your site's "
+"frontend speed."
 msgstr ""
 "ماژول‌های مدیریت هیچ بار اضافی روی سایت شما ایجاد نمی‌کنند؛ فقط کد استفاده‌شده "
 "اجرا می‌شود."
