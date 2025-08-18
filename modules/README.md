@@ -160,7 +160,8 @@ Open the main PHP file and modify its header:
  */
 ```
 
-**After:**```php
+**After:**
+```php
 /**
  * Module Name: My Awesome Feature
  * Description: Does something amazing.
