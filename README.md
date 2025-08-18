@@ -11,6 +11,10 @@
   </p>
 </div>
 
+> **Want to test it instantly? No server needed!**
+> 
+> [![Open in WordPress Playground](https://developer.wordpress.org/playground/media/open-in-playground.svg)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json)
+
 ---
 
 ## 💡 The Philosophy: Power and Performance Through Modularity

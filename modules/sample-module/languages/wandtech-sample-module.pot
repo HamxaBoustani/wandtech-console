@@ -1,73 +1,90 @@
+# Copyright (C) 2025 Hamxa
+# This file is distributed under the same license as the Sample Module plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: Sample Module 1.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sample-module\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-16T21:23:29+00:00\n"
+"POT-Creation-Date: 2025-08-18T14:20:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wandtech-sample-module\n"
 
-#: sample-module.php:68
+#. Plugin Name of the plugin
+#: sample-module.php
+msgid "Sample Module"
+msgstr ""
+
+#. Description of the plugin
+#: sample-module.php
+msgid "A perfect boilerplate and example of how to build a high-quality, translatable module for WandTech Console."
+msgstr ""
+
+#. Author of the plugin
+#: sample-module.php
+msgid "Hamxa"
+msgstr ""
+
+#: sample-module.php:69
 msgid "WandTech Console Overview"
 msgstr ""
 
-#: sample-module.php:101
+#: sample-module.php:102
 msgid "Total Modules"
 msgstr ""
 
-#: sample-module.php:108
+#: sample-module.php:109
 msgid "Active"
 msgstr ""
 
-#: sample-module.php:115
+#: sample-module.php:116
 msgid "Inactive"
 msgstr ""
 
-#: sample-module.php:122
+#: sample-module.php:123
 msgid "Optimized"
 msgstr ""
 
-#: sample-module.php:129
+#: sample-module.php:130
 msgid "The Mission: Power Meets Performance"
 msgstr ""
 
-#: sample-module.php:130
+#: sample-module.php:131
 msgid "WandTech Console is designed to be the last optimization and feature plugin you'll ever need, providing maximum functionality with minimal performance impact."
 msgstr ""
 
-#: sample-module.php:136
+#: sample-module.php:137
 msgid "Reduce Bloat:"
 msgstr ""
 
-#: sample-module.php:137
+#: sample-module.php:138
 msgid "Replace dozens of single-feature plugins with one lightweight, modular core."
 msgstr ""
 
-#: sample-module.php:143
+#: sample-module.php:144
 msgid "Boost Speed:"
 msgstr ""
 
-#: sample-module.php:144
+#: sample-module.php:145
 msgid "Only the code you use is loaded. Admin modules have zero impact on your site's frontend speed."
 msgstr ""
 
-#: sample-module.php:150
+#: sample-module.php:151
 msgid "Total Control:"
 msgstr ""
 
-#: sample-module.php:151
+#: sample-module.php:152
 msgid "Activate and deactivate features with a single click from a centralized, beautiful console."
 msgstr ""
 
-#: sample-module.php:160
+#: sample-module.php:161
 msgid "Go to Full Console"
 msgstr ""
 
-#: sample-module.php:163
+#: sample-module.php:164
 msgid "Star on GitHub"
 msgstr ""

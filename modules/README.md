@@ -41,10 +41,7 @@ define('WANDTECH_COPYRIGHT_FOOTER_LOADED', true);
 class Wandtech_Copyright_Footer_Module {
     
     public function __construct() {
-        // Load this module's text domain so its strings can be translated.
         add_action('init', [$this, 'load_module_textdomain']);
-        
-        // Add the copyright notice to the WordPress footer.
         add_action('wp_footer', [$this, 'display_copyright_notice']);
     }
 
@@ -61,7 +58,6 @@ class Wandtech_Copyright_Footer_Module {
         $current_year = date('Y');
         $year_string = ($start_year === $current_year) ? $start_year : "{$start_year}–{$current_year}";
         
-        // This string is now translatable using the 'copyright-footer' text domain.
         $copyright_text = sprintf(
             esc_html__('Copyright &copy; %1$s %2$s. All Rights Reserved.', 'copyright-footer'),
             $year_string,
@@ -88,64 +84,95 @@ The comment block at the top of your module's file is critical. It controls how 
 
 | Header             | Required? | Description                                                                                                                                                             |
 |--------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Module Name`      | **Yes**   | The human-readable name displayed in the Console UI. **This is automatically translatable** if you provide translation files.                                           |
-| `Description`      | **Yes**   | A brief explanation of the module's function. **This is also automatically translatable.**                                                                              |
-| `Scope`            | **Yes**   | **(Performance Critical)** Defines when the module is loaded. See "Understanding Scope" below.                                                                        |
-| `Text Domain`      | **Yes**   | **(Translation Critical)** A unique slug for this module's translations. Used for the header and all strings inside your module.                                        |
+| `Module Name`      | **Yes**   | The human-readable name displayed in the Console UI. This is automatically translated.                                                                                  |
+| `Description`      | **Yes**   | A brief explanation of the module's function. This is also automatically translated.                                                                                    |
+| `Scope`            | **Yes**   | **(Performance Critical)** Defines when the module is loaded: `admin`, `frontend`, or `all`.                                                                             |
+| `Text Domain`      | **Yes**   | **(Translation Critical)** A unique slug for this module's translations.                                                                                                |
 | `Domain Path`      | **Yes**   | Should always be `/languages/`.                                                                                                                                         |
-| `Requires Plugins` | No        | A comma-separated list of required plugin files (e.g., `woocommerce/woocommerce.php`). The framework will prevent activation if these are not active.                  |
+| `Requires Plugins` | No        | A comma-separated list of required plugin files (e.g., `woocommerce/woocommerce.php`).                                                                                |
 | `Version` / `Author` | No        | Standard metadata for maintenance.                                                                                                                                      |
-
-### Understanding `Scope`
--   **`admin`**: Loads **only** in the WordPress dashboard.
--   **`frontend`**: Loads **only** on the public-facing site.
--   **`all`**: Loads everywhere. Use sparingly.
 
 ---
 
-## 3. Advanced Features & Best Practices
+## 3. Best Practices
 
-To create truly professional modules, follow these best practices.
-
-### a) Class Encapsulation (Important!)
-Encapsulation is the practice of hiding a class's internal data to make your code more stable.
-- **Rule of Thumb:** Declare all new properties and helper methods as `private` by default. Only use `public` for methods hooked into WordPress actions or filters.
+### a) Class Encapsulation
+Declare all new properties and helper methods as `private` by default. Only use `public` for methods hooked into WordPress actions or filters.
 
 ### b) Independent Translations
-The framework is designed so that each module manages its own translations.
-1.  **Set Headers:** Ensure `Text Domain` and `Domain Path` are correctly set in your module's header.
-2.  **Load Text Domain:** Use the `init` hook to call `load_plugin_textdomain()`. The boilerplate in the Quick Start provides a perfect example.
-3.  **Use Translation Functions:** Wrap all user-facing strings in WordPress translation functions, like `__('My String', 'my-text-domain')`.
+The framework automatically handles the translation of your `Module Name` and `Description`. For all other strings inside your module:
+1.  **Set Headers:** Ensure `Text Domain` and `Domain Path` are correctly set.
+2.  **Load Text Domain:** Use the `init` hook to call `load_plugin_textdomain()`.
+3.  **Use Translation Functions:** Wrap all user-facing strings in functions like `__('My String', 'my-text-domain')`.
 
-The framework will **automatically handle the translation of your `Module Name` and `Description`** based on the text domain you provide. You do not need to write any extra code for this.
+---
 
-### c) Adding New Console Tabs
-Your module can add its own settings page as a new tab in the Console.
+## 4. Generating Translation Files (.pot)
+
+To allow others to translate your module, you need to generate a `.pot` file. This file will contain all translatable strings, **including the `Module Name` and `Description` from the header.**
+
+The recommended tool is **WP-CLI**.
+
+#### Step A: Temporarily Add `Plugin Name` Header
+`wp-cli-i18n` needs a `Plugin Name:` header to correctly extract header strings. Add this line **temporarily** to your module's header block.
 
 ```php
-// Inside your module's main class...
-public function __construct() {
-    add_filter('wandtech_console_register_tabs', [$this, 'add_my_custom_tab']);
-}
-
-public function add_my_custom_tab(array $tabs): array {
-    $tabs['my-custom-tab'] = [
-        'title'    => __('My Settings', 'my-module-domain'),
-        'callback' => [$this, 'render_my_settings_page'],
-        'priority' => 50
-    ];
-    return $tabs;
-}
-
-public function render_my_settings_page() {
-    // Your settings page HTML goes here.
-    echo '<h2>' . esc_html__('My Settings Page', 'my-module-domain') . '</h2>';
-}
+/**
+ * Plugin Name:     Copyright Footer  // <-- Temporary line
+ * Module Name:     Copyright Footer
+ * ...
+ */
 ```
 
-### d) Module Directories Explained
--   `/modules/`: This is where you place all your **Optional Modules**.
--   `/core-modules/`: Reserved for the framework's essential UI components. **Do not add files here.**
+#### Step B: Run the Command
+Navigate to your module's directory in the terminal and run the following command:
+
+```bash
+# Example for the 'copyright-footer' module
+cd /path/to/wp-content/plugins/wandtech-console/modules/copyright-footer/
+
+wp i18n make-pot . languages/copyright-footer.pot
+```
+
+#### Step C: Remove `Plugin Name` Header
+After the `.pot` file is successfully generated, **remember to remove the temporary `Plugin Name:` line** from your module's header. This is a critical step to prevent your module from appearing as a duplicate plugin in the main WordPress plugins list.
+
+---
+
+## 5. Converting an Existing Plugin into a Module
+
+Converting a standalone plugin into a WandTech module is a simple process.
+
+#### Step 1: Adapt the File Structure
+Move the plugin's files into a new folder inside `/modules/`. Ensure the main PHP file has the same name as its parent folder.
+
+#### Step 2: Modify the Header
+Open the main PHP file and modify its header:
+1.  Change the `Plugin Name:` header to `Module Name:`.
+2.  **Add the `Scope:` header.** This is the most important step. Determine if your plugin's functionality is needed on the `admin`, `frontend`, or `all` sides of the site.
+
+**Before:**
+```php
+/**
+ * Plugin Name: My Awesome Feature
+ * Description: Does something amazing.
+ * ...
+ */
+```
+
+**After:**```php
+/**
+ * Module Name: My Awesome Feature
+ * Description: Does something amazing.
+ * Scope:       admin  // Or frontend, or all
+ * ...
+ */
+```
+
+#### Step 3: Review and Refactor
+- Ensure all functionality is encapsulated within a class.
+- Check if the `Text Domain` is correctly defined and used.
+- Your plugin is now a fully integrated WandTech module!
 
 ---
 
