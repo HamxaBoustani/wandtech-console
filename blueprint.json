@@ -30,6 +30,10 @@
       "options": {
         "activate": true
       }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php update_option('woocommerce_onboarding_profile', ['setup_finished' => true]); ?>"
     }
   ]
 }
