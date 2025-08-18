@@ -17,7 +17,7 @@
   <!-- === THE MODIFIED PLAYGROUND SECTION === -->
   <br>
   <a href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json" target="_blank" rel="noopener">
-    <img src="https://developer.wordpress.org/playground/media/open-in-playground.svg" alt="Open in WordPress Playground">
+    <img src="https://pub-4517acecab6543f0bc62af2fea95f2b6.r2.dev/playground-icon.svg" alt="Open in WordPress Playground">
   </a>
   <!-- === END OF SECTION === -->
 
