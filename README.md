@@ -4,16 +4,24 @@
   <p><strong>A high-performance, developer-centric framework for adding modular functionality to WordPress.</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/version-2.1.1-blue.svg?style=for-the-badge" alt="Plugin Version">
+    <a href="https://github.com/HamxaBoustani/wandtech-console/releases" target="_blank">
+      <img src="https://img.shields.io/badge/version-2.1.1-blue.svg?style=for-the-badge" alt="Plugin Version">
+    </a>
     <img src="https://img.shields.io/badge/wp_tested-6.5+-brightgreen.svg?style=for-the-badge" alt="WordPress Tested">
     <img src="https://img.shields.io/badge/php-7.4+-blueviolet.svg?style=for-the-badge" alt="PHP Requires">
-    <img src="https://img.shields.io/badge/license-GPL--2.0+-informational.svg?style=for-the-badge" alt="License">
+    <a href="https://github.com/HamxaBoustani/wandtech-console/blob/main/LICENSE" target="_blank">
+      <img src="https://img.shields.io/badge/license-GPL--2.0+-informational.svg?style=for-the-badge" alt="License">
+    </a>
   </p>
-</div>
 
-> **Want to test it instantly? No server needed!**
-> 
-> [![Open in WordPress Playground](https://developer.wordpress.org/playground/media/open-in-playground.svg)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json)
+  <!-- === THE MODIFIED PLAYGROUND SECTION === -->
+  <br>
+  <a href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json" target="_blank" rel="noopener">
+    <img src="https://developer.wordpress.org/playground/media/open-in-playground.svg" alt="Open in WordPress Playground">
+  </a>
+  <!-- === END OF SECTION === -->
+
+</div>
 
 ---
 
