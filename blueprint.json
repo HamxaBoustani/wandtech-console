@@ -20,6 +20,20 @@
       "options": {
         "activate": true
       }
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woocommerce"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php update_option('woocommerce_onboarding_profile', ['setup_finished' => true]); ?>"
     }
   ]
 }
