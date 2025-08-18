@@ -13,15 +13,45 @@
       <img src="https://img.shields.io/badge/license-GPL--2.0+-informational.svg?style=for-the-badge" alt="License">
     </a>
   </p>
-
-  <!-- === THE MODIFIED PLAYGROUND SECTION === -->
-  <br>
-  <a href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json" target="_blank" rel="noopener">
-    <img src="https://pub-4517acecab6543f0bc62af2fea95f2b6.r2.dev/playground-icon.svg" alt="Open in WordPress Playground">
-  </a>
-  <!-- === END OF SECTION === -->
-
 </div>
+
+---
+
+<!-- === THE MODIFIED PLAYGROUND SECTION === -->
+<div align="center" style="margin-top: 16px;">
+  <a 
+    href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/HamxaBoustani/wandtech-console/main/blueprint.json" 
+    target="_blank" 
+    rel="noopener"
+    style="
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e1e1e;
+      background-color: #f6f8fa;
+      border: 1px solid rgba(27, 31, 35, 0.15);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.2s ease-in-out;
+    "
+    onmouseover="this.style.backgroundColor='#f0f2f4'"
+    onmouseout="this.style.backgroundColor='#f6f8fa'"
+  >
+    <img 
+      src="https://pub-4517acecab6543f0bc62af2fea95f2b6.r2.dev/playground-icon.svg" 
+      alt="Playground Icon"
+      width="20" 
+      height="20"
+      style="vertical-align: middle;"
+    >
+    Open in WordPress Playground
+  </a>
+</div>
+<!-- === END OF SECTION === -->
 
 ---
 
