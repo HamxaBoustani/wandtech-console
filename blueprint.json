@@ -1,6 +1,6 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "landingPage": "/wp-admin/admin.php?page=wandtech-console#modules",
+  "landingPage": "/wp-admin/index.php",
   "preferredVersions": {
     "php": "8.1",
     "wp": "latest"
@@ -14,11 +14,11 @@
     {
       "step": "installPlugin",
       "options": {
-        "activate": true
-      },
-      "pluginZipFile": {
-        "resource": "url",
-        "url": "https://github.com/HamxaBoustani/wandtech-console/releases/latest/download/wandtech-console.zip"
+        "activate": true,
+        "pluginZipFile": {
+          "resource": "url",
+          "url": "https://github.com/HamxaBoustani/wandtech-console/releases/latest/download/wandtech-console.zip"
+        }
       }
     }
   ]
