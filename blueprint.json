@@ -1,0 +1,54 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/index.php",
+  "preferredVersions": {
+    "php": "8.1",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "step": "installPlugin",
+      "options": {
+        "activate": true,
+        "pluginZipFile": {
+          "resource": "url",
+          "url": "https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip"
+        }
+      }
+    },
+    {
+      "step": "installPlugin",
+      "options": {
+        "activate": true,
+        "pluginZipFile": {
+          "resource": "url",
+          "url": "https://github.com/HamxaBoustani/wandtech-console/releases/latest/download/wandtech-console.zip"
+        }
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\n// WooCommerce basic setup\nupdate_option('woocommerce_onboarding_profile', ['skipped' => true]);\nupdate_option('woocommerce_store_address', '123 Test Street');\nupdate_option('woocommerce_store_address_2', '');\nupdate_option('woocommerce_store_city', 'Tehran');\nupdate_option('woocommerce_default_country', 'IR:TH');\nupdate_option('woocommerce_store_postcode', '12345');\nupdate_option('woocommerce_currency', 'IRT');\n?>"
+    },
+    {
+      "step": "importFile",
+      "file": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/plugins/woocommerce/sample-data/sample_products.xml"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\n$woochart_sample_file = WP_PLUGIN_DIR . '/wandtech-console/modules/wandtech-woochart/sample-orders.php';\nif (file_exists($woochart_sample_file)) {\n    require_once $woochart_sample_file;\n    if (function_exists('create_sample_orders_for_woochart')) {\n        create_sample_orders_for_woochart(20);\n    }\n}\n?>"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\n$active_modules = get_option('wandtech_console_active_modules', []);\nif (!in_array('wandtech-woochart', $active_modules)) {\n    $active_modules[] = 'wandtech-woochart';\n    update_option('wandtech_console_active_modules', $active_modules);\n}\n?>"
+    }
+  ]
+}

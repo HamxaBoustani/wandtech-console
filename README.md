@@ -8,8 +8,8 @@
     <a href="https://github.com/HamxaBoustani/wandtech-console/releases" target="_blank">
       <img src="https://img.shields.io/github/v/release/HamxaBoustani/wandtech-console?style=for-the-badge&label=Version" alt="Latest Version">
     </a>
-    <img src="https://img.shields.io/wordpress/plugin/tested/wandtech-console?style=for-the-badge" alt="WordPress Tested">
-    <img src="https://img.shields.io/wordpress/plugin/php-version/wandtech-console?style=for-the-badge" alt="Requires PHP">
+    <img src="https://img.shields.io/badge/WordPress-6.0+-blue?style=for-the-badge" alt="WordPress Tested">
+    <img src="https://img.shields.io/badge/PHP-7.4%2B-lightgrey?style=for-the-badge" alt="Requires PHP">
     <a href="https://github.com/HamxaBoustani/wandtech-console/blob/main/LICENSE" target="_blank">
       <img src="https://img.shields.io/github/license/HamxaBoustani/wandtech-console?style=for-the-badge" alt="License">
     </a>
