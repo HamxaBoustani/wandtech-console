@@ -1,0 +1,1313 @@
+/*
+ * WandTech Console Admin Styles
+ *
+ * @version 2.7.0
+ */
+
+/* ==========================================================================
+   1. Global Wrapper & Variables
+   ========================================================================== */
+
+:root {
+    --primary-color: #354977;
+    --primary-color-hover: #005a87;
+    --card-background: #ffffff;
+    --border-color: #dcdcde;
+    --text-color: #2c3338;
+    --subtle-text-color: #50575e;
+    --success-color: #228b22;
+    --danger-color: #d63638;
+    --danger-color-hover: #b72b2d;
+    --border-radius: 16px;
+    --border-radius-small: 10px;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.wandtech-wrap {
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+}
+
+/* [NEW] Global Link Styling Reset for the Console */
+.wandtech-wrap a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Optional: Smooth color transition on hover */
+}
+
+/* Add underline back on hover for most links */
+.wandtech-wrap a:hover {
+    /* text-decoration: underline; */
+}
+
+/* --- Exceptions: Do not underline these specific links on hover --- */
+
+/* Tab navigation links */
+.wandtech-wrap .nav-tab:hover {
+    text-decoration: none;
+}
+
+/* Module action links (like "Details") */
+.wandtech-wrap .module-action-links a:hover {
+    /* We can keep the underline here as it's a common pattern,
+       or disable it with `text-decoration: none;` if you prefer.
+       The default from the rule above will apply an underline. */
+}
+
+/* Footer links */
+.wandtech-wrap .wandtech-console-footer a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   2. Page Header & Typography
+   ========================================================================== */
+
+.wandtech-header-logo {
+    text-align: center;
+    margin-bottom: -35px;
+}
+
+.wandtech-header-logo svg {
+    width: 128px;
+    height: auto;
+    overflow: visible;
+}
+
+@keyframes heartbeat-animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.wandtech-header-logo path:not(.logo-heartbeat) {
+    fill: #fda957;
+}
+
+.wandtech-header-logo .logo-heartbeat {
+    fill: #354977;
+    animation: heartbeat-animation 1.4s infinite ease-in-out;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.wandtech-wrap h1,
+.wandtech-subtitle {
+    text-align: center;
+}
+
+.wandtech-wrap h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.wandtech-subtitle {
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#wandtech-console-notices .notice {
+    margin: 0 auto 20px;
+    max-width: calc(100% - 60px);
+}
+
+/* ==========================================================================
+   3. Tab Navigation System
+   ========================================================================== */
+
+.nav-tab-wrapper,
+.wrap h2.nav-tab-wrapper {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 0;
+    border-bottom: none !important; 
+    position: relative;
+}
+
+.nav-tab {
+    background: #f6f7f7;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    margin: 0 5px; 
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--subtle-text-color);
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    top: 1px;
+}
+
+.nav-tab:focus, 
+.nav-tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--card-background), 0 0 0 4px var(--primary-color);
+    z-index: 2;
+}
+
+.nav-tab:hover {
+    color: var(--primary-color);
+    background: #fff;
+}
+
+.nav-tab-active,
+.nav-tab-active:hover {
+    color: var(--text-color);
+    background-color: var(--card-background);
+    font-weight: 600;
+    border-bottom-color: var(--card-background);
+    z-index: 1;
+}
+
+.nav-tab-active:focus,
+.nav-tab-active:focus-visible {
+    box-shadow: none;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius); 
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    z-index: 0;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.tab-content h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ==========================================================================
+   4. Module Manager Tab (#modules)
+   ========================================================================== */
+
+.modules-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.module-filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.filter-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.filter-link:hover {
+    color: var(--primary-color-hover);
+}
+
+.filter-link.current,
+.filter-link.current:hover {
+    color: var(--text-color);
+    font-weight: 600;
+    border-bottom-color: var(--primary-color);
+}
+
+.module-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#module-search-input {
+    width: 250px;
+}
+
+.module-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+}
+
+.modules-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius-small);
+}
+
+.modules-empty-state .dashicons {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.modules-empty-state h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: var(--text-color);
+}
+
+.modules-empty-state p {
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+    margin: 0;
+}
+
+.empty-state-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.empty-state-actions .button {
+    font-size: 14px;
+    padding: 10px 20px !important;
+    height: auto !important;
+}
+
+/*
+ * Fix for button text alignment in the "Empty State" view.
+ * WordPress default styles for buttons with Dashicons can cause vertical
+ * alignment issues. Using Flexbox provides a modern and robust solution.
+ */
+.modules-empty-state .empty-state-actions .button {
+    display: inline-flex;       /* Use Flexbox for alignment */
+    align-items: center;        /* Vertically center all items (icon and text) */
+    justify-content: center;    /* Horizontally center all items */
+    gap: 6px;                   /* Add a small space between the icon and the text */
+}
+
+/*
+ * Adjust the Dashicon inside the button to ensure it aligns perfectly
+ * with the text.
+ */
+.modules-empty-state .empty-state-actions .button .dashicons {
+    margin: 0; /* Remove default WordPress margins that can cause misalignment */
+    line-height: 1; /* Ensure the icon's line height doesn't interfere */
+}
+
+.module-card {
+    position: relative;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* [NEW] To contain the thumbnail */
+}
+
+/* [NEW] Styles for the module thumbnail */
+.module-card-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #f0f2f4;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide parts of the image that overflow */
+}
+
+/* [FIXED] Make the image fill the container completely */
+.module-card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will now work correctly */
+    transition: transform 0.3s ease-in-out; /* Optional: Add a subtle zoom effect on hover */
+}
+
+/* [NEW] Styles for the settings icon link */
+.module-settings-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(2px);
+}
+
+.module-settings-link:hover {
+    background-color: #fff;
+    color: var(--primary-color-hover);
+    transform: scale(1.1);
+}
+
+/* [NEW] Add a spinning animation for the settings icon on hover */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.module-settings-link:hover .dashicons {
+    animation: spin 1s linear infinite;
+}
+
+/* --- RTL Support for settings icon --- */
+body.rtl .module-settings-link {
+    left: auto;
+    right: 10px;
+}
+
+.module-settings-link .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    /* Optional: To make the spin smoother if the icon is not perfectly centered */
+    line-height: 1; 
+}
+
+/* [NEW] Wrapper for content below thumbnail */
+.module-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to fill space */
+}
+
+
+.module-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.module-card.is-active {
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.module-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.module-card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.module-card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.module-card-body p {
+    margin: 0;
+    color: var(--subtle-text-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.module-card-error-notice {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fbeaea;
+    border-inline-start: 4px solid var(--danger-color);
+    border-radius: 4px;
+    color: #333;
+    font-size: 13px;
+}
+
+.module-card-error-notice strong {
+    color: var(--text-color);
+}
+
+.module-card-error-notice code {
+    background-color: rgba(0,0,0,0.05);
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+.module-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f1;
+    color: #787c82;
+    font-size: 12px;
+    border-bottom-left-radius: var(--border-radius-small);
+    border-bottom-right-radius: var(--border-radius-small);
+}
+
+.module-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.module-action-links .delete-module-link {
+    color: var(--danger-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.module-action-links .delete-module-link:hover {
+    color: var(--danger-color-hover);
+    text-decoration: underline;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 28px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.spinner-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    border-radius: var(--border-radius-small);
+    align-items: center;
+    justify-content: center;
+}
+
+.module-card.loading .spinner-overlay {
+    display: flex;
+}
+
+.spinner-overlay::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   5. Dashboard Tab (#dashboard)
+   ========================================================================== */
+
+.wandtech-dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 960px) {
+    .wandtech-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wandtech-dashboard-welcome {
+    padding: 20px;
+    background-color: #f6f7f7;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    text-align: center;
+}
+
+.wandtech-dashboard-welcome h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.wandtech-dashboard-welcome p {
+    font-size: 1.1em;
+    color: var(--subtle-text-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dashboard-main-content h4 {
+    margin-top: 30px;
+}
+
+.wandtech-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--card-background);
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--card-shadow);
+}
+
+.stat-card .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: var(--subtle-text-color);
+}
+
+.stat-card.active .dashicons,
+.stat-card.performance .dashicons {
+    color: var(--primary-color);
+}
+
+.stat-card.inactive .dashicons {
+    color: var(--danger-color);
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 1em;
+    color: var(--subtle-text-color);
+}
+
+.wandtech-performance-explainer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-inline-start: 4px solid var(--primary-color);
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.rtl .wandtech-performance-explainer {
+    /* border-inline-start: 0;
+    border-inline-end: 4px solid var(--primary-color); */
+}
+
+.wandtech-performance-explainer .dashicons {
+    color: var(--primary-color);
+}
+
+.wandtech-performance-explainer p {
+    margin: 0;
+}
+
+.dashboard-info-box {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--card-shadow);
+}
+
+.dashboard-info-box + .dashboard-info-box {
+    margin-top: 30px;
+}
+
+.dashboard-main-content .dashboard-info-box {
+    margin-top: 30px;
+}
+
+.dashboard-info-box h4 {
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.wandtech-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wandtech-info-table th,
+.wandtech-info-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f1;
+    vertical-align: middle;
+}
+
+.wandtech-info-table tbody tr:last-child th,
+.wandtech-info-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.wandtech-info-table th {
+    font-weight: 600;
+    color: var(--text-color);
+    width: 60%;
+    text-align: left;
+    text-align: start;
+}
+
+.wandtech-info-table td {
+    color: var(--subtle-text-color);
+}
+
+.wandtech-info-table .info-value {
+    text-align: right;
+    text-align: end;
+}
+
+.path-subtitle {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--subtle-text-color);
+    margin-top: 4px;
+    word-break: break-all;
+}
+
+.status-indicator {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.status-indicator.is-enabled {
+    background-color: #e0f2e0;
+    color: #3d8f3d;
+}
+
+.status-indicator.is-disabled {
+    background-color: #fbeaea;
+    color: #c93535;
+}
+
+/* ==========================================================================
+   6. Module Installer & Scaffolder
+   ========================================================================== */
+
+.wandtech-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.wandtech-modal-content {
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: var(--border-radius-small);
+    width: 90%;
+    max-width: 500px;
+    position: relative; /* This is crucial for the close button positioning */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* --- [MODIFIED] Close Button with RTL Support --- */
+.wandtech-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Default LTR position */
+    left: auto;   /* Explicitly set for LTR */
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    transition: color 0.15s ease-in-out;
+}
+
+.wandtech-modal-close:hover,
+.wandtech-modal-close:focus {
+    color: #333;
+    outline: none;
+    box-shadow: none;
+}
+
+/* When WordPress is in RTL mode, it adds the .rtl class to the body tag. */
+.rtl .wandtech-modal-close {
+    right: auto; /* Unset the LTR position */
+    left: 10px;  /* Set the RTL position */
+}
+/* --- [END OF MODIFICATION] --- */
+
+
+.wandtech-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.wandtech-modal-body {
+    margin: 25px 0;
+}
+
+.wandtech-modal-body input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed var(--border-color);
+    border-radius: 4px;
+    text-align: center;
+    color: var(--subtle-text-color);
+}
+
+.wandtech-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.wandtech-modal-footer .spinner {
+    margin: 0 10px 0 0;
+    visibility: hidden;
+}
+
+.wandtech-modal-footer .spinner.is-active {
+    visibility: visible;
+}
+
+.wandtech-modal-notice {
+    margin-top: 15px;
+}
+
+.wandtech-modal-notice .notice {
+    margin: 0;
+    padding: 12px;
+}
+
+/* ==========================================================================
+    7. Multi-Section Settings Tab
+   ========================================================================== */
+
+.wandtech-settings-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.settings-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background: #fdfdfd;
+    overflow: hidden;
+}
+
+.settings-search-wrapper {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#wandtech-settings-search {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.settings-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.settings-nav li {
+    margin-bottom: 0;
+}
+
+.settings-nav a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--primary-color);
+    border-bottom: 1px solid #f0f0f1;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+}
+
+.settings-nav li:last-child a {
+    border-bottom: none;
+}
+
+.settings-nav a:hover {
+    background-color: #f0f2f4;
+    color: var(--primary-color-hover);
+}
+
+.settings-nav li.active a {
+    background-color: #f6f7f7;
+    color: var(--text-color);
+    font-weight: 600;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    border: none !important;
+}
+
+.settings-nav li:last-child.active a {
+    border-bottom-left-radius: var(--border-radius-small);
+    border-bottom-right-radius: var(--border-radius-small);
+}
+
+body:not(.rtl) .settings-nav li.active a {
+    margin-right: -1px;
+    padding-right: 16px;
+}
+
+body.rtl .settings-nav li.active a {
+    margin-left: -1px;
+    padding-left: 16px;
+}
+
+.settings-nav li.no-results-message {
+    padding: 10px 15px; 
+    color: #777;
+    font-style: italic;
+    display: none;
+}
+
+.settings-content-wrapper {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-content {
+    background: #fff;
+    padding: 20px 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+}
+
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+/* --- [MODIFIED] Styles for different row types --- */
+
+/* Style for classic two-column rows (e.g., text inputs) */
+.settings-content .setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+.settings-content .setting-label { padding-right: 20px; }
+.settings-content .setting-label h4 { margin: 0 0 5px; font-size: 1em; font-weight: 600; }
+.settings-content .setting-label p.description { margin: 0; font-size: 13px; color: var(--subtle-text-color); }
+.settings-content .setting-field { flex-shrink: 0; }
+
+/* Style for new single-column toggle rows */
+.setting-row-toggle {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+.setting-row-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between toggle and title */
+}
+.setting-row-header h3 { margin: 0; font-size: 1.2em; font-weight: 600; }
+.setting-row-toggle > .description {
+    margin-top: 8px;
+    margin-left: 65px; /* Indent the description to align with the title */
+    font-size: 13px;
+    color: var(--subtle-text-color);
+}
+body.rtl .setting-row-toggle > .description { margin-left: 0; margin-right: 65px; }
+
+
+/* General rules for rows */
+.settings-content .setting-row:first-child,
+.settings-content .setting-row-toggle:first-child {
+    padding-top: 0;
+}
+.settings-content .setting-row:last-of-type,
+.settings-content .setting-row-toggle:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.settings-content hr {
+    border: none;
+    border-top: 1px solid #f0f0f1;
+    margin: 0;
+}
+
+
+/* --- Footer --- */
+.setting-row-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.setting-row-footer .spinner {
+    visibility: hidden;
+    margin-left: 10px;
+}
+body.rtl .setting-row-footer .spinner {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.setting-row-footer .spinner.is-active {
+    visibility: visible;
+}
+
+/* ==========================================================================
+   8. Console Footer
+   ========================================================================== */
+
+.wandtech-console-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--subtle-text-color);
+}
+
+.footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-credit .dashicons-heart {
+    color: #e25555;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+}
+
+/* ==========================================================================
+   9. Danger Button Style & Animations
+   ========================================================================== */
+
+.button.button-danger {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+    color: #fff;
+}
+.button.button-danger:hover,
+.button.button-danger:focus {
+    background: var(--danger-color-hover);
+    border-color: var(--danger-color-hover);
+    color: #fff;
+}
+
+/* --- [MODIFIED] Moved Pulse Animation here for general use --- */
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 115, 170, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 115, 170, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 115, 170, 0);
+    }
+}
+
+/* This class can now be used on any button to indicate an unsaved state */
+.button.has-unsaved-changes {
+    animation: pulse-animation 2s infinite;
+}
+
+/* ==========================================================================
+   10. About Tab (#about)
+   ========================================================================== */
+
+.wandtech-about-container { 
+    max-width: 800px; 
+    margin: 20px auto 0; 
+}
+.wandtech-about-header { 
+    text-align: center; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #eee; 
+    margin-bottom: 30px; 
+}
+.wandtech-about-header h3 { 
+    font-size: 1.8em; 
+    margin: 0; 
+    color: var(--text-color); 
+}
+.wandtech-about-header p { 
+    font-size: 1.2em; 
+    color: var(--subtle-text-color); 
+    margin-top: 5px; 
+}
+.wandtech-about-section { 
+    margin-bottom: 40px; 
+    display: flex; 
+    gap: 30px; 
+    align-items: flex-start; 
+}
+.wandtech-about-section.creator-section img { 
+    border-radius: 50%; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+.wandtech-about-section .content { 
+    flex-grow: 1; 
+}
+.wandtech-about-section h4 { 
+    font-size: 1.3em; 
+    color: var(--text-color); 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #f0f0f1; 
+}
+.wandtech-action-buttons { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 20px; 
+    flex-wrap: wrap; 
+}
+.wandtech-action-buttons .button { 
+    font-size: 14px; 
+    padding: 8px 15px !important; 
+    height: auto !important; 
+    line-height: 1.5 !important; 
+}
+.wandtech-action-buttons .button .dashicons { 
+    margin-right: 5px; 
+    vertical-align: text-bottom; 
+}
+
+/* ==========================================================================
+   12. Custom Admin Notices
+   ========================================================================== */
+
+/* Keyframes for a smooth fade-in and slide-up animation */
+@keyframes noticeFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* The container is positioned relative to the screen (fixed),
+   but its horizontal position and width are controlled by JavaScript
+   to align with the main .wandtech-wrap element. */
+#wandtech-console-notices {
+    position: fixed;
+    bottom: 50px; /* Vertical distance from the top of the screen */
+    z-index: 100001; /* High z-index to appear on top of modals */
+    pointer-events: none; /* Allows clicking "through" the empty container space */
+    
+    /* left and width are set dynamically by admin.js */
+}
+
+/* The notice itself defines its own size and is centered by its container */
+#wandtech-console-notices .notice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-inline-start-width: 5px;
+    border-inline-start-style: solid;
+    margin: 0 auto 15px; /* `margin: 0 auto` centers the notice horizontally within the container */
+    pointer-events: auto; /* Re-enable pointer events for the notice itself */
+    width: 100%; /* Take up the full width of the container */
+    max-width: 650px;
+    animation: noticeFadeInUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--card-background); /* Ensure a solid background */
+}
+
+/* --- Media query for smaller screens --- */
+@media (max-width: 782px) {
+    #wandtech-console-notices {
+        top: 10px;
+        /* On mobile, the JS will set left/width to almost full screen, so this is fine. */
+    }
+    #wandtech-console-notices .notice {
+        /* No specific overrides needed, it will adapt to the container width. */
+    }
+}
+
+/* --- Icons and Text Styling (RTL/LTR compatible) --- */
+#wandtech-console-notices .notice::before {
+    font-family: "dashicons";
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+#wandtech-console-notices .notice.notice-success {
+    border-inline-start-color: var(--success-color);
+}
+#wandtech-console-notices .notice.notice-success::before {
+    content: "\f147"; /* checkmark icon */
+    color: var(--success-color);
+}
+
+#wandtech-console-notices .notice.notice-error {
+    border-inline-start-color: var(--danger-color);
+}
+#wandtech-console-notices .notice.notice-error::before {
+    content: "\f534"; /* x-circle icon */
+    color: var(--danger-color);
+}
+
+#wandtech-console-notices .notice.notice-warning {
+    border-inline-start-color: #f0ad4e;
+}
+#wandtech-console-notices .notice.notice-warning::before {
+    content: "\f536"; /* warning icon */
+    color: #f0ad4e;
+}
+
+#wandtech-console-notices .notice p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#wandtech-console-notices .notice .notice-dismiss {
+    position: absolute;
+    top: 50%;
+    inset-inline-end: 10px;
+    /* [FIXED] Corrected the percentage value */
+    transform: translateY(-50%); 
+    padding: 5px;
+}

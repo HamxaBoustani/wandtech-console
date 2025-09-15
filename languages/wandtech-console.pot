@@ -1,0 +1,574 @@
+# Copyright (C) 2025 Hamxa Boustani
+# This file is distributed under the GPL v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WandTech Console 3.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-console\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-09-12T18:11:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wandtech-console\n"
+
+#. Plugin Name of the plugin
+#: wandtech-console.php
+#: includes/class-wandtech-console-admin.php:104
+#: includes/class-wandtech-console-admin.php:278
+msgid "WandTech Console"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wandtech-console.php
+msgid "https://wandtech.ir"
+msgstr ""
+
+#. Description of the plugin
+#: wandtech-console.php
+msgid "A high-performance, developer-centric framework for adding modular functionality to WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: wandtech-console.php
+#: system/about-tab/about-tab.php:82
+msgid "Hamxa Boustani"
+msgstr ""
+
+#. Author URI of the plugin
+#: wandtech-console.php
+msgid "https://github.com/HamxaBoustani/"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:60
+msgid "Console"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:105
+msgid "WandTech"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:178
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:179
+msgid "Installing..."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:180
+#: system/module-installer/module-installer.php:103
+msgid "Install Now"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:181
+msgid "Creating..."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:182
+#: system/module-scaffolder/module-scaffolder.php:117
+msgid "Create Now"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:279
+msgid "The elegant, high-performance way to add and manage powerful features."
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:317
+msgid "No Console Modules Found"
+msgstr ""
+
+#: includes/class-wandtech-console-admin.php:318
+msgid "The WandTech Console is active, but no core modules were found to display the UI. Please ensure the `system` directory is present and not empty."
+msgstr ""
+
+#. translators: 1: Heart icon HTML span, 2: Author link HTML anchor.
+#: includes/class-wandtech-console-admin.php:330
+#, php-format
+msgid "Made with %1$s by %2$s"
+msgstr ""
+
+#. translators: %s: Plugin version number.
+#: includes/class-wandtech-console-admin.php:351
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:60
+#: includes/class-wandtech-console-ajax.php:133
+#: system/module-installer/module-installer.php:122
+#: system/module-scaffolder/module-scaffolder.php:139
+msgid "Security check failed or insufficient permissions."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:67
+msgid "The specified module is invalid."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:80
+msgid "Module status updated successfully."
+msgstr ""
+
+#. translators: 1: Module name, 2: List of valid scopes.
+#: includes/class-wandtech-console-ajax.php:101
+#, php-format
+msgid "Cannot activate \"%1$s\". The \"Scope\" header is missing or invalid. Please use one of: %2$s."
+msgstr ""
+
+#. translators: 1: Module name, 2: Required plugin name.
+#: includes/class-wandtech-console-ajax.php:113
+#, php-format
+msgid "Cannot activate \"%1$s\". It requires: %2$s"
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:139
+msgid "Invalid module slug format."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:144
+msgid "The specified module does not exist."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:149
+msgid "Please deactivate the module before deleting it."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:155
+#: system/module-installer/module-installer.php:147
+#: system/module-scaffolder/module-scaffolder.php:163
+msgid "Could not initialize the WordPress Filesystem."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:167
+msgid "Security risk: Invalid module path detected."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:172
+msgid "Module directory not found. It may have already been deleted."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:180
+msgid "Module deleted successfully."
+msgstr ""
+
+#: includes/class-wandtech-console-ajax.php:182
+msgid "Could not delete the module folder. This is usually a file permission issue."
+msgstr ""
+
+#. translators: 1: Module name, 2: Required plugin name.
+#: includes/class-wandtech-console-modules.php:106
+#, php-format
+msgid "<strong>WandTech Module Auto-Deactivated: %1$s</strong><br>This module was deactivated because it requires the following plugin to be active: %2$s"
+msgstr ""
+
+#. translators: 1: Module name, 2: The invalid scope value found.
+#: includes/class-wandtech-console-modules.php:121
+#, php-format
+msgid "<strong>WandTech Module Auto-Deactivated: %1$s</strong><br>It was deactivated because the \"Scope\" header is missing or has an invalid value (\"%2$s\"). Valid scopes are: admin, frontend, all."
+msgstr ""
+
+#: system/about-tab/about-tab.php:54
+msgid "About"
+msgstr ""
+
+#: system/about-tab/about-tab.php:78
+msgid "More Power, More Performance."
+msgstr ""
+
+#: system/about-tab/about-tab.php:79
+msgid "Thank you for choosing WandTech Console!"
+msgstr ""
+
+#: system/about-tab/about-tab.php:84
+msgid "About the Author"
+msgstr ""
+
+#. translators: %s is the author's name linked to their GitHub profile.
+#: system/about-tab/about-tab.php:90
+#, php-format
+msgid "This plugin was crafted with ❤️ by <strong>%s</strong>, a passionate developer dedicated to creating high-quality, performant, and user-friendly solutions for WordPress."
+msgstr ""
+
+#: system/about-tab/about-tab.php:113
+msgid "Get Involved & Stay Connected"
+msgstr ""
+
+#: system/about-tab/about-tab.php:114
+msgid "Help us make this open-source project even better! Star us on GitHub, report issues, or connect on social media."
+msgstr ""
+
+#: system/about-tab/about-tab.php:118
+msgid "Visit WandTech"
+msgstr ""
+
+#: system/about-tab/about-tab.php:122
+msgid "GitHub Repository"
+msgstr ""
+
+#: system/about-tab/about-tab.php:126
+msgid "Follow on X"
+msgstr ""
+
+#: system/dashboard/dashboard.php:52
+msgid "Dashboard"
+msgstr ""
+
+#: system/dashboard/dashboard.php:71
+msgid "Could not initialize the WordPress Filesystem. File permissions cannot be checked."
+msgstr ""
+
+#: system/dashboard/dashboard.php:116
+msgid "Welcome to your Control Center"
+msgstr ""
+
+#: system/dashboard/dashboard.php:117
+msgid "This is the central hub for all WandTech features. Manage powerful tools that enhance your site, all from one place."
+msgstr ""
+
+#: system/dashboard/dashboard.php:120
+msgid "System Status At a Glance"
+msgstr ""
+
+#: system/dashboard/dashboard.php:126
+msgid "Total Modules"
+msgstr ""
+
+#: system/dashboard/dashboard.php:133
+msgid "Active Modules"
+msgstr ""
+
+#: system/dashboard/dashboard.php:140
+msgid "Inactive Modules"
+msgstr ""
+
+#: system/dashboard/dashboard.php:147
+msgid "Performance Optimizations"
+msgstr ""
+
+#. translators: %d: The number of admin-only modules.
+#: system/dashboard/dashboard.php:159
+#, php-format
+msgid "To keep your site fast for visitors, we prevented %d admin-specific module from loading on the frontend."
+msgid_plural "To keep your site fast for visitors, we prevented %d admin-specific modules from loading on the frontend."
+msgstr[0] ""
+msgstr[1] ""
+
+#: system/dashboard/dashboard.php:186
+#: system/dashboard/dashboard.php:323
+msgid "Unknown"
+msgstr ""
+
+#: system/dashboard/dashboard.php:198
+msgid "Server Environment"
+msgstr ""
+
+#: system/dashboard/dashboard.php:211
+#: system/dashboard/dashboard.php:212
+msgid "Not Set"
+msgstr ""
+
+#: system/dashboard/dashboard.php:216
+msgid "WordPress Constants"
+msgstr ""
+
+#: system/dashboard/dashboard.php:236
+msgid "File System Permissions"
+msgstr ""
+
+#: system/dashboard/dashboard.php:261
+msgid "Key File Status"
+msgstr ""
+
+#: system/dashboard/dashboard.php:313
+msgid "Enabled"
+msgstr ""
+
+#: system/dashboard/dashboard.php:313
+msgid "Disabled"
+msgstr ""
+
+#: system/dashboard/dashboard.php:328
+msgid "Writable"
+msgstr ""
+
+#: system/dashboard/dashboard.php:328
+msgid "Not Writable"
+msgstr ""
+
+#: system/dashboard/dashboard.php:335
+msgid "Present"
+msgstr ""
+
+#: system/dashboard/dashboard.php:335
+msgid "Missing"
+msgstr ""
+
+#: system/module-installer/module-installer.php:67
+msgid "Install Module"
+msgstr ""
+
+#: system/module-installer/module-installer.php:89
+#: system/module-manager/module-manager.php:243
+#: system/module-scaffolder/module-scaffolder.php:81
+msgid "Close"
+msgstr ""
+
+#: system/module-installer/module-installer.php:90
+msgid "Install a New Module"
+msgstr ""
+
+#: system/module-installer/module-installer.php:91
+msgid "Upload a module in a .zip format to install it."
+msgstr ""
+
+#: system/module-installer/module-installer.php:97
+msgid "The module must be a correctly formatted .zip file."
+msgstr ""
+
+#: system/module-installer/module-installer.php:135
+msgid "No file was uploaded or an error occurred during upload."
+msgstr ""
+
+#: system/module-installer/module-installer.php:141
+msgid "Invalid file type. Only .zip files are allowed."
+msgstr ""
+
+#. translators: %s: The error message from the unzipping process.
+#: system/module-installer/module-installer.php:157
+#, php-format
+msgid "Failed to unzip file: %s"
+msgstr ""
+
+#: system/module-installer/module-installer.php:175
+msgid "Could not move the module to the correct directory. This may be a file permission issue."
+msgstr ""
+
+#: system/module-installer/module-installer.php:183
+msgid "Module installed successfully!"
+msgstr ""
+
+#: system/module-installer/module-installer.php:241
+msgid "The ZIP file does not contain a valid module directory structure."
+msgstr ""
+
+#. translators: %s: The module slug that already exists.
+#: system/module-installer/module-installer.php:248
+#, php-format
+msgid "A module with the slug \"%s\" already exists. Please delete it first if you want to reinstall."
+msgstr ""
+
+#. translators: %s: The name of the missing required file (e.g., "my-module.php").
+#: system/module-installer/module-installer.php:259
+#, php-format
+msgid "Invalid module structure. The required file \"%s\" is missing."
+msgstr ""
+
+#: system/module-installer/module-installer.php:271
+msgid "This does not appear to be a valid WandTech module. The \"Module Name\" header is missing."
+msgstr ""
+
+#. translators: %s: A code block showing the valid scope options.
+#: system/module-installer/module-installer.php:276
+#, php-format
+msgid "Installation failed. The \"Scope\" header is missing or invalid. Please use one of: %s."
+msgstr ""
+
+#: system/module-manager/module-manager.php:55
+msgid "Modules"
+msgstr ""
+
+#: system/module-manager/module-manager.php:85
+msgid "All"
+msgstr ""
+
+#: system/module-manager/module-manager.php:88
+msgid "Active"
+msgstr ""
+
+#: system/module-manager/module-manager.php:91
+msgid "Inactive"
+msgstr ""
+
+#: system/module-manager/module-manager.php:96
+msgid "Search modules..."
+msgstr ""
+
+#: system/module-manager/module-manager.php:118
+msgid "No modules found matching your search criteria."
+msgstr ""
+
+#: system/module-manager/module-manager.php:124
+msgid "Your Module Library is Empty"
+msgstr ""
+
+#: system/module-manager/module-manager.php:125
+msgid "Start adding powerful features to your site right now."
+msgstr ""
+
+#: system/module-manager/module-manager.php:173
+msgid "Module Settings"
+msgstr ""
+
+#. translators: %s: Module version number.
+#: system/module-manager/module-manager.php:199
+#, php-format
+msgid "Version: %s"
+msgstr ""
+
+#. translators: %s: Module author name.
+#: system/module-manager/module-manager.php:205
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: system/module-manager/module-manager.php:208
+msgid "Details"
+msgstr ""
+
+#: system/module-manager/module-manager.php:217
+msgid "Delete"
+msgstr ""
+
+#: system/module-manager/module-manager.php:244
+msgid "Are you sure?"
+msgstr ""
+
+#: system/module-manager/module-manager.php:250
+msgid "This action cannot be undone."
+msgstr ""
+
+#: system/module-manager/module-manager.php:255
+msgid "Cancel"
+msgstr ""
+
+#: system/module-manager/module-manager.php:259
+msgid "Yes, Delete Module"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:61
+msgid "Create Module"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:82
+msgid "Create a New Module"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:83
+msgid "Fill out the details below. A new folder and boilerplate file will be created."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:88
+msgid "Module Slug (Required)"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:92
+msgid "Use lowercase letters, numbers, and hyphens only."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:95
+msgid "Description (Required)"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:100
+msgid "Scope (Required)"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:102
+msgid "All: Loads everywhere (default)"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:103
+msgid "Admin: Only loads in the WP dashboard"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:104
+msgid "Frontend: Only loads on the public-facing site"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:108
+msgid "Requires Plugins (Optional)"
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:111
+msgid "Comma-separated list of required plugin files."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:152
+msgid "Invalid slug format. Use lowercase letters, numbers, and hyphens only."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:155
+msgid "Description is a required field."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:158
+msgid "Invalid scope selected."
+msgstr ""
+
+#. translators: %s: The module slug that already exists.
+#: system/module-scaffolder/module-scaffolder.php:172
+#, php-format
+msgid "A module with the slug \"%s\" already exists."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:178
+msgid "Could not create the module directory. Check file permissions."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:201
+msgid "Could not create the main module file. Check file permissions."
+msgstr ""
+
+#: system/module-scaffolder/module-scaffolder.php:221
+msgid "Module created successfully!"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:100
+msgid "Settings"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:120
+msgid "Search settings..."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:128
+msgid "No sections found."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:146
+msgid "Save Changes"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:188
+msgid "General"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:235
+msgid "Developer Mode"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:238
+msgid "Enables the loading of developer-specific system modules, such as the Module Scaffolder."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:248
+msgid "Data Cleanup on Uninstall"
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:251
+msgid "If enabled, all WandTech Console data will be permanently deleted from your database when the plugin is uninstalled."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:252
+msgid "Default behavior is to keep data for safety."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:270
+msgid "Security check failed."
+msgstr ""
+
+#: system/settings-tab/settings-tab.php:315
+msgid "Settings saved successfully."
+msgstr ""
