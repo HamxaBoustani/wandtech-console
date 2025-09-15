@@ -1,6 +1,6 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "landingPage": "/wp-admin/index.php",
+  "landingPage": "/wp-admin/admin.php?page=wandtech-console#modules",
   "preferredVersions": {
     "php": "8.1",
     "wp": "latest"
@@ -14,22 +14,35 @@
     {
       "step": "installPlugin",
       "options": {
-        "activate": true,
-        "pluginZipFile": {
-          "resource": "url",
-          "url": "https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip"
-        }
+        "activate": true
+      },
+      "pluginZipFile": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip"
       }
     },
     {
       "step": "installPlugin",
       "options": {
-        "activate": true,
-        "pluginZipFile": {
-          "resource": "url",
-          "url": "https://github.com/HamxaBoustani/wandtech-console/releases/latest/download/wandtech-console.zip"
-        }
+        "activate": true
+      },
+      "pluginZipFile": {
+        "resource": "url",
+        "url": "https://github.com/HamxaBoustani/wandtech-console/releases/latest/download/wandtech-console.zip"
       }
+    },
+    {
+      "step": "unzip",
+      "zipFile": {
+        "resource": "url",
+        "url": "https://github.com/HamxaBoustani/wandtech-woochart/archive/refs/heads/main.zip"
+      },
+      "extractToPath": "/wp-content/modules/wandtech-woochart-main"
+    },
+    {
+      "step": "moveFile",
+      "sourcePath": "/wp-content/modules/wandtech-woochart-main",
+      "destinationPath": "/wp-content/modules/wandtech-woochart"
     },
     {
       "step": "runPHP",
@@ -44,11 +57,11 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php\n$woochart_sample_file = WP_PLUGIN_DIR . '/wandtech-console/modules/wandtech-woochart/sample-orders.php';\nif (file_exists($woochart_sample_file)) {\n    require_once $woochart_sample_file;\n    if (function_exists('create_sample_orders_for_woochart')) {\n        create_sample_orders_for_woochart(20);\n    }\n}\n?>"
+      "code": "<?php\n// Correct path for the module file\n$woochart_sample_file = WP_CONTENT_DIR . '/modules/wandtech-woochart/sample-orders.php';\nif (file_exists($woochart_sample_file)) {\n    require_once $woochart_sample_file;\n    if (function_exists('create_sample_orders_for_woochart')) {\n        create_sample_orders_for_woochart(20);\n    }\n}\n?>"
     },
     {
       "step": "runPHP",
-      "code": "<?php\n$active_modules = get_option('wandtech_console_active_modules', []);\nif (!in_array('wandtech-woochart', $active_modules)) {\n    $active_modules[] = 'wandtech-woochart';\n    update_option('wandtech_console_active_modules', $active_modules);\n}\n?>"
+      "code": "<?php\n// Activate the module by adding it to the option\n$active_modules = get_option('wandtech_console_active_modules', []);\nif (!in_array('wandtech-woochart', $active_modules)) {\n    $active_modules[] = 'wandtech-woochart';\n    update_option('wandtech_console_active_modules', $active_modules);\n}\n?>"
     }
   ]
 }
